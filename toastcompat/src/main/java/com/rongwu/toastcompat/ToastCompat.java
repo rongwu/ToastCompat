@@ -16,7 +16,7 @@ public class ToastCompat implements IToast {
 
     private static final String CHECK_OP_NO_THROW = "checkOpNoThrow";
     private static final String OP_POST_NOTIFICATION = "OP_POST_NOTIFICATION";
-    private static int checkNotication = -1;
+    private static int checkNotification = -1;
 
     private IToast mIToast;
 
@@ -25,11 +25,11 @@ public class ToastCompat implements IToast {
     }
 
     ToastCompat(Context context, String text, int duration) {
-        if (checkNotication == -1){
-            checkNotication = isNotificationEnabled(context) ? 0 : 1;
+        if (checkNotification == -1){
+            checkNotification = isNotificationEnabled(context) ? 0 : 1;
         }
-        Log.d("test", checkNotication + "");
-        if (checkNotication == 1) {
+
+        if (checkNotification == 1) {
             mIToast = CustomToast.makeText(context, text, duration);
         } else {
             mIToast = SystemToast.makeText(context, text, duration);
