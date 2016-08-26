@@ -1,7 +1,6 @@
 # ToastCompat
-解决Android关闭通知消息权限无法弹出Toast的问题 
-
 我本想用SnackBar来替代，可SnackBar有下面几个问题要注意：
+
 1. make()方法的第一个参数的view,不能是有一个ScrollView.
 因为SnackBar的实现逻辑是往这个View去addView.而ScrollView我们知道,是只能有一个Child的.否则会Exception.
 
